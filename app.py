@@ -23,11 +23,13 @@ from models import User, Issue, Link, Discussion, Community
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "secret"
+
 app.config['UPLOAD_FOLDER'] = './static/uploads'
 bcrypt = Bcrypt(app)
 
 Base = declarative_base()
 
+os.environ['PGSSLROOTCERT'] = os.path.abspath(os.path.dirname(__file__)) + './postgres/root.cert'
 
 db_uri = os.environ['DATABASE_URL'].replace("postgresql://", "cockroachdb://")
 try:
