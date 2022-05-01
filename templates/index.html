@@ -29,7 +29,7 @@
                     {% endif %}
                     <div class="searchResults" style="width:100%;box-shadow:1px 1px 3px grey;">
                         {% for issue in issues %}
-                            <button value="{{ issue.Issue.id }}" class="searchResultBox" style="width:100%;">
+                            <button value="{{ issue.Issue.title }}" class="searchResultBox" style="width:100%;">
                                 <div style="width:100%;display:flex;flex-flow:row wrap; align-items:baseline;justify-content:space-between;">
                                     <span style="font-size:1rem;"><div style="width:auto;font-weight:bold;font-size:1.3rem;text-align:left;">{{ issue.Community.name }}</div> {{ issue.Issue.title }}</span>
                                     <p>{{ issue.Issue.dateof }}</p>

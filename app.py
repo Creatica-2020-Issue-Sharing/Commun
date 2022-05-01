@@ -63,7 +63,8 @@ def home():
         return render_template('index.html', issues = orderByRecent, searchInput = searchInput)
 
 def setIssue(s, issueID):
-    issue = s.query(Issue).filter(Issue.id == issueID).first()
+    issue = s.query(Issue).filter(Issue.title == issueID).first()
+    print(issue)
     currentIssue['title'] = issue.title
     currentIssue['dateof'] = issue.dateof
     currentIssue['about'] = issue.about
@@ -172,7 +173,6 @@ def issue():
         else:
             
         
-            
 
             #run_transaction(Session, lambda s: newIssueAndLink(s, title, dateof, text, links))
 
