@@ -71,9 +71,9 @@ def setIssue(s, issueID):
     currentIssue['imagepath'] = issue.imagepath
 
     listOfLinks = []
-    links = s.query(Link).filter(Link.issueid == issueID).all()
+    links = s.query(Link, Issue).join(Issue).filter(Link.issueid == Issue.id and Issue.title == issueID).all()
     for link in links:
-        listOfLinks.append({'title' : link.title, 'ref' : link.ref})
+        listOfLinks.append({'title' : link.Link.title, 'ref' : link.Link.ref})
     
     currentIssue['links'] = listOfLinks
 
