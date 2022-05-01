@@ -32,6 +32,7 @@ Base = declarative_base()
 db_uri = os.environ['DATABASE_URL'].replace("postgresql://", "cockroachdb://")
 try:
     engine = create_engine(db_uri)
+    engine.connect()
 except Exception as e:
     print("Failed to connect to database.")
     print(f"{e}")
@@ -281,6 +282,7 @@ if __name__ == '__main__':
     db_uri = os.environ['DATABASE_URL'].replace("postgresql://", "cockroachdb://")
     try:
         engine = create_engine(db_uri)
+        engine.connect()
     except Exception as e:
         print("Failed to connect to database.")
         print(f"{e}")
