@@ -269,6 +269,8 @@ def getOrderByRecent(session, searchInput = ''):
     return newList
 
 def uploadPhoto(imagepath):
+    if not imagepath or imagepath.strip() == '':
+        return ''
     if imagepath.filename.rsplit('.', 1)[1].lower() in ['png', 'jpg', 'jpeg', 'jfif']:
         filename = secure_filename(imagepath.filename)
         basedirectory = os.path.abspath(os.path.dirname(__file__))
