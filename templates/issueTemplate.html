@@ -6,10 +6,14 @@
   </head>
   <body>
 	<div class="col">
-        <p id="stuff">Commun<img 
-            src="{{ url_for('static',  filename='home-5-24.png')}}"
-            class="home"
-            /> 
+        <p id="stuff">Commun
+            <a href="{{url_for('home')}}">
+                Home
+                <img 
+                src="{{ url_for('static',  filename='home-5-24.png')}}"
+                class="home"
+                /> 
+        </a>
         </p>
       
     </div>
