@@ -7,7 +7,7 @@
   <body>
 	<div class="col">
         <p id="stuff">Commun<img 
-            src="{{ url_for('static',  filename='./uploads/' + issue.imagepath)}}"
+            src="{{ url_for('static',  filename='home-5-24.png')}}"
             class="home"
             /> 
         </p>
@@ -22,7 +22,7 @@
 
     <div class="gre"> 
         <img 
-            src="person-circle-outline-svgrepo-com (1).svg"
+            src="{{ url_for('static', filename='person-circle-outline-svgrepo-com (1).svg')}}"
             class="per"
             /> 
         <h1 id="grt">{{ issue.about }}
