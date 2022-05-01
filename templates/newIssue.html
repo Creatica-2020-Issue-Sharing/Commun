@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+        <div class="page" style="display:flex;flex-direction:column;max-width:800px;">
+            <button style="background-color:#396186;color:white;width:10rem;padding:0.3rem 1rem;align-self:flex-end;border-radius:0.4rem;outline:none; margin:0.4rem;position:relative;bottom:-37rem;right:2rem;" id="linkToggle" onclick="addMoreLinks()">Add More Links</button>
+
+            <form class="submissionForm" id="submissionForm" style="display:flex;flex-direction:column;width:100%;margin:auto;box-shadow:1rem 1rem 3rem rgb(190, 190, 190);padding:2rem;border-radius:1rem;" action="{{ url_for('newIssue')}}" method="POST" enctype="multipart/form-data">
+                <h1 style="text-align:center;">Report An Issue For Discussion</h1>
+                <label for="community">Community Name</label>
+                <input id="community" name="community" type="text">
+                <label for="infoTitle">Issue Title</label>
+                <input name="infoTitle" type="text">
+                <label for="date">Starting Date</label>
+                <input name="date" type="date">
+                <label for="infoText">About</label>
+                <textarea rows="5" name="infoText"></textarea>
+                <div>
+                    <label for="image" >Background Image</label>
+                    <input style="background:none;" type="file" class="stretch" name="image" id="image">
+                </div>
+
+                <label style="margin-top:1rem;" class="link" for="linkTitle0">Link title</label>
+                <input class="link" name="linkTitle0" type="text">
+                <label class="link" for="link0">Link</label>
+                <input class="link" name="link0" type="text">
+                <input style="background-color:#273F56;color:white;padding:1rem;" id="submissionSubmit" type="submit" value="Submit">
+            </form>
+        </div>
+{% endblock %}

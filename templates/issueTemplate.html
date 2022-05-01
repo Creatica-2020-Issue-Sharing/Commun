@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>idk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css')}}">
+  </head>
+  <body>
+	<div class="col">
+        <p id="stuff">Commun<img 
+            src="{{ url_for('static',  filename='./uploads/' + issue.imagepath)}}"
+            class="home"
+            /> 
+        </p>
+      
+    </div>
+    <div class="line"></div>
+    
+    <div class="bl">
+        <p id="discu">{{ issue.title }}</p>
+        <p id="feel">Discussion and Discourse</p>
+    </div>
+
+    <div class="gre"> 
+        <img 
+            src="person-circle-outline-svgrepo-com (1).svg"
+            class="per"
+            /> 
+        <h1 id="grt">{{ issue.about }}
+        </h1>
+    </div>
+    <div class="bottom"></div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <nav style="width:100%;display:flex;justify-content:space-between;padding:1rem 2rem;font-size:1.3rem;">
+        <div>
+            <a style="margin-right:1rem;" href="{{ url_for('home')}}">Home</a>
+            <a style="font-weight:800;" href="{{ url_for('about')}}">About</a>
+
+        </div>
+        
+        {% if session.userID %}
+            <a href="{{ url_for('account') }}">My Account</a></b>
+        {% else %}
+            <a  href="{{ url_for('login') }}">Sign In</a></b>
+        {% endif %}
+    </nav>
+</header>
+<div class="page" style="padding:1rem;min-height:90vh;display:flex;flex-direction:column;justify-content:center;max-width:1000px;">
+
+    <div style="text-align:center;">
+        <div style="font-size:7rem;font-weight:bold;line-height:7rem;font-family:'Open Sans';">Welcome To Commun!</div>
+        <div style="font-size:1.2rem;padding-bottom:5rem;margin-top:1.5rem;">
+            Commun is an internet forum used for the discussion of human rights violations within your community. It was created as a catalyst for change and growth within communities by motivating others to speak on issues within their communities, and form and share opinions to build a stronger community.
+        </div>
+    </div>
+</div>
+{% endblock %}
