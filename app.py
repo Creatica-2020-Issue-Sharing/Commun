@@ -29,7 +29,7 @@ bcrypt = Bcrypt(app)
 
 Base = declarative_base()
 
-os.environ['PGSSLROOTCERT'] = os.path.abspath(os.path.dirname(__file__)) + './postgresql/root.cert'
+os.environ['PGSSLROOTCERT'] = os.path.abspath(os.path.dirname(__file__)) + './postgresql/root.crt'
 
 db_uri = os.environ['DATABASE_URL'].replace("postgresql://", "cockroachdb://")
 try:
