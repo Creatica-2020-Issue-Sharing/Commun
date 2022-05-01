@@ -4,3 +4,5 @@ cockroach
 __pycache__
 
 cockroach.zip
+
+venv
